@@ -24,6 +24,8 @@ import io.invertase.firebase.storage.RNFirebaseStoragePackage; // Firebase Stora
 import java.util.Arrays;
 import java.util.List;
 
+import com.horcrux.svg.SvgPackage;
+
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {

@@ -3,8 +3,9 @@
  */
 import React from 'react'
 import {Button, StyleSheet, Text, TextInput, View, AsyncStorage, ToastAndroid} from "react-native";
-// import {Pie} from 'react-native-pathjs-charts';
-import firebase from 'react-native-firebase'
+import {Pie} from 'react-native-pathjs-charts';
+import firebase from 'react-native-firebase';
+
 
 export default class EditDetails extends React.Component{
     static navigationOptions = ({navigation}) => ({
@@ -23,6 +24,12 @@ export default class EditDetails extends React.Component{
         this.dbRef = firebase.database().ref("traveller");
         this.isNewItem = params.newItem;
 
+        this.data = [[
+            [0, 1],
+            [1, 3],
+            [3, 7],
+            [4, 9],
+        ]];
     }
 
     saveItem(item){
@@ -54,45 +61,45 @@ export default class EditDetails extends React.Component{
         const {navigate} = this.props.navigation;
         const {goBack} = this.props.navigation;
 
-        // let data = [
-        //     {
-        //         "name": "Dummy",
-        //         "length": 20
-        //     },
-        //     {
-        //         "name": "Dummier",
-        //         "length": 35
-        //     },
-        //     {
-        //         "name": "Dummest",
-        //         "length": 45
-        //     }
-        // ];
-        // let options = {
-        //     margin: {
-        //         top: 20,
-        //         left: 20,
-        //         right: 20,
-        //         bottom: 20
-        //     },
-        //     width: 200,
-        //     height: 200,
-        //     color: '#27ae60',
-        //     r: 10,
-        //     R: 100,
-        //     legendPosition: 'topLeft',
-        //     animate: {
-        //         type: 'oneByOne',
-        //         duration: 2,
-        //         fillTransition: 3
-        //     },
-        //     label: {
-        //         fontFamily: 'Arial',
-        //         fontSize: 12,
-        //         fontWeight: true,
-        //         color: '#2c3e50'
-        //     }
-        // };
+        let data = [
+            {
+                "name": "Dummy",
+                "length": 20
+            },
+            {
+                "name": "Dummier",
+                "length": 35
+            },
+            {
+                "name": "Dummest",
+                "length": 45
+            }
+        ];
+        let options = {
+            margin: {
+                top: 20,
+                left: 20,
+                right: 20,
+                bottom: 20
+            },
+            width: 200,
+            height: 200,
+            color: '#27ae60',
+            r: 10,
+            R: 100,
+            legendPosition: 'topLeft',
+            animate: {
+                type: 'oneByOne',
+                duration: 2,
+                fillTransition: 3
+            },
+            label: {
+                fontFamily: 'Arial',
+                fontSize: 12,
+                fontWeight: true,
+                color: '#2c3e50'
+            }
+        };
 
         return (
             <View style={styles.mainContainer}>
